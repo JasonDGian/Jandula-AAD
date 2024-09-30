@@ -5,7 +5,7 @@
 
 
 # 📌 Configuración de proyecto - dependencias necesarias.
-Para conectar una base de datos a nuestra aplicación deberemos un driver (o conector) adecuado y la api de persistencia de java.
+Para conectar una base de datos a nuestra aplicación necisaremos un _driver_ (o conector) adecuado y la API de persistencia de java.
 - Para un servidor `MySQL` incluiremos la dependencia de `MySQL Driver` como controlador.
 - Como API de persistencia incluiremos `Spring Data JPA`.
     
