@@ -71,7 +71,7 @@ Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para e
 - **@Column:** Define propiedades específicas de las columnas (longitud, unicidad, obligatoriedad).
 - **@ManyToOne:** Define una relación muchos-a-uno con otra entidad (clave foránea).
 - **@OneToMany:** Define una relación uno-a-muchos con otra entidad (clave foránea).
-- **OneToOne:** Define una relación uno-a-uno con otra entidad (clave foránea).
+- **@OneToOne:** Define una relación uno-a-uno con otra entidad (clave foránea).
 
 ## 🔹 Definición de atributos de clase.
 Es fundamental usar camelCase para los nombres de los atributos de la clase, ya que Spring los analiza para generar los nombres de las columnas, convirtiendo el camelCase a snake_case.
