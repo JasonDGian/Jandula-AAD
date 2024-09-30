@@ -3,6 +3,13 @@
 2. Parametros de conexión en el fichero de configuración yaml.
 3. Objetos de persistencia en Java.
 
+## 🔹 Pre-requisitos.
+- Disponer de un motor de BBDD o privilegios para instalar uno (puede ser contenedorizado).
+- Conocer el nombre de la base de datos.
+- Conocer los credenciales de acceso (usuario, contraseña) del usuario con privilegios necesarios.
+- 
+
+
 
 # 📍 Configuración de proyecto - dependencias necesarias.
 Para conectar una base de datos a nuestra aplicación necisaremos un _driver_ (o conector) adecuado y la API de persistencia de java.
@@ -51,7 +58,10 @@ logging: #Sección de configuración del sistema de logs en Spring.
     max-history: 20 # Especifica el número máximo de archivos históricos de logs que se guardarán.
     total-size-cap: 10MB # Indica el tamaño total máximo permitido para todos los archivos de log acumulados.
 ```
-   
+
+>[!Caution]
+>En una aplicación Spring Boot, solo puede haber un único archivo `application.yaml`, `application.yml` o `application.properties` en el mismo nivel. Esto significa que si existe un
+`application.yml` no podrán existir con el mismo nombre otros ficheros aunque tengan extensión distinta.
      
 # 📍 Creación de modelos o entidades.
 Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para esta operación es necesario utilizar ciertas anotaciones especiales de Spring Data JPA.
