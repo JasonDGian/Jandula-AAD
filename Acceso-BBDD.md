@@ -79,8 +79,8 @@ public class TestObject
 ---
 
 
-**Ejemplo de yaml explicado**
-IMPORTANTE: Nota como **NO SON TABULACIONES**. Cada indentación se realiza con un `doble espacio`.
+**Ejemplo de yaml explicado**   
+IMPORTANTE: Nota como **NO SON TABULACIONES**. Cada indentación se realiza con un `doble espacio`.   
 ```yaml
 spring:
   jpa.hibernate.ddl-auto: create # Configura cómo se debe gestionar el esquema de la base de datos.
@@ -91,6 +91,7 @@ spring:
     hikari: # Hikari es un mecanismo de eficiencia de conexiones. Cnoocido como "Pool de conexiones".
     connection-timeout: 60000 # Establece el tiempo máximo de espera en milisegundos (60 segundos) para obtener una conexión antes de lanzar un error.
     maximum-pool-size: 5 # Especifica el número máximo de conexiones permitidas en el pool de conexiones simultáneas.
+
 server:
   port: 8085 # Define el puerto en el que se ejecutará la aplicación Spring Boot.
 
