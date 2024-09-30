@@ -92,7 +92,7 @@ spring:
     connection-timeout: 60000
     maximum-pool-size: 5
 server:
-  port:8085
+  port: 8085
 ```
    
 `jpa.hibernate.ddl-auto: create`   
