@@ -29,10 +29,48 @@ la aplicación, se especifica qué fichero de configuración utilizar.
    
 
 ## 🔹 Flujo de trabajo para configurar una conexión.
-1. Crear la base de datos en el servidor.
+Para crear una conexión a base de datos de una aplicación Spring necesitamos 3 elementos.
+1. Motor de base de datos.
    - Asegurarse del nombre de la base de datos.
-2. Configurar los parametros de conexión en el fichero de configuración yaml.
-3. Crear los objetos de persistencia en Java.
+2. Parametros de conexión en el fichero de configuración yaml.
+3. Objetos de persistencia en Java.
+
+### ▫️ Motor de base de datos.
+Con esto me refiero a un motor como MySQL en docker o alguna instancia disponible en red.
+Es crucial conocer bien el nombre de la base de datos que deseamos atacar.
+Además deberemos conocer los datos de acceso (usuario + contraseña).
+
+### ▫️ Parametros de conexión en application.yaml
+Conociendo usuario, contraseña y nombre de la base de datos podemos configurar el fichero `application.yaml` para la conexión.
+
+**Ejemplo de configuración minima**
+```yaml
+spring:
+  jpa.hibernate.ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/mi_base_datos
+    username: root
+    password: 1234
+```
+
+### ▫️ Entidades / Modelos.
+Las entidades o modelos son clases de Java que se _mapean_ a tablas en la base de datos mediante anotaciones de **Spring Data JPA**.
+     
+Para crear un modelo de tabla, usamos la anotación `@Entity`, que marca la clase como una entidad mapeada a una tabla relacional. Cada instancia de la clase representa una fila en dicha tabla.
+
+```java
+@Entity
+public class TestObject
+{
+   // Ejemplo de clase entidad-tabla vacía.
+}
+```
+
+
+
+
+
+---
 
 
 **Ejemplo de yaml explicado**
