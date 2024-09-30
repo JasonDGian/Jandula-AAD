@@ -40,13 +40,13 @@ IMPORTANTE: Nota como **NO SON TABULACIONES**. Cada indentación se realiza con 
 ```yaml
 spring:
   jpa.hibernate.ddl-auto: create
-    datasource:
-      url: jbdc:mysql://localhost:3306/mi_base_datos
-      username: root
-      password: 1234
-      hikari:
-      connection-timeout: 60000
-      maximum-pool-size: 5
+  datasource:
+    url: jbdc:mysql://localhost:3306/mi_base_datos
+    username: root
+    password: 1234
+    hikari:
+    connection-timeout: 60000
+    maximum-pool-size: 5
 server:
   port:8085
 ```
