@@ -25,59 +25,6 @@ escribir para interactuar con la base de datos.
 >   
 >![imagen](https://github.com/user-attachments/assets/2e848b19-92b0-43db-97cb-6071d8bd9a0d)
 
-# 📌 Creación de modelos o entidades.
-
-
-
-    
-Los ficheros de propiedades son los que permiten configurar el arranque de nuestra aplicación en Spring Boot. Sin ellos, no podríamos especificar dónde está nuestra BBDD, 
-en qué puerto arranca nuestro microservicio, qué nivel de logs tendrá nuestra aplicación, etcétera. Es posible tener varios ficheros de configuración para distintos "contextos" 
-o entornos, pero es necesario distinguirlos. Para diferenciarlos, se suelen usar nombres como `application-HOME.yml` o `application-HOSTING.yml`, y según el contexto en que se lance 
-la aplicación, se especifica qué fichero de configuración utilizar.
-    
->[!Caution]
->En una aplicación Spring Boot, solo puede haber un único archivo `application.yaml`, `application.yml` o `application.properties` en el mismo nivel. Esto significa que si existe un
-`application.yml` no podrán existir con el mismo nombre otros ficheros aunque tengan extensión distinta.
-   
-
-
-### ▫️ Motor de base de datos.
-Con esto me refiero a un motor como MySQL en docker o alguna instancia disponible en red.
-Es crucial conocer bien el nombre de la base de datos que deseamos atacar.
-Además deberemos conocer los datos de acceso (usuario + contraseña).
-
-### ▫️ Parametros de conexión en application.yaml
-Conociendo usuario, contraseña y nombre de la base de datos podemos configurar el fichero `application.yaml` para la conexión.
-
-**Ejemplo de configuración minima**
-```yaml
-spring:
-  jpa.hibernate.ddl-auto: create
-  datasource:
-    url: jdbc:mysql://localhost:3306/mi_base_datos
-    username: root
-    password: 1234
-```
-
-### ▫️ Entidades / Modelos.
-Las entidades o modelos son clases de Java que se _mapean_ a tablas en la base de datos mediante anotaciones de **Spring Data JPA**.
-     
-Para crear un modelo de tabla, usamos la anotación `@Entity`, que marca la clase como una entidad mapeada a una tabla relacional. Cada instancia de la clase representa una fila en dicha tabla.
-
-```java
-@Entity
-public class TestObject
-{
-   // Ejemplo de clase entidad-tabla vacía.
-}
-```
-
-
-
-
-
----
-
 
 **Ejemplo de yaml explicado**   
 IMPORTANTE: Nota como **NO SON TABULACIONES**. Cada indentación se realiza con un `doble espacio`.   
@@ -104,4 +51,55 @@ logging: #Sección de configuración del sistema de logs en Spring.
     max-history: 20 # Especifica el número máximo de archivos históricos de logs que se guardarán.
     total-size-cap: 10MB # Indica el tamaño total máximo permitido para todos los archivos de log acumulados.
 ```
+
+# 📌 Creación de modelos o entidades.
+Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para esta operación es necesario utilizar ciertas anotaciones especiales de Spring Data JPA.
+- @Entity.
+- @Table
+- @ID
+- @Column
+- @ManyToOne
+
+**Ejemplo de un modelo.**
+```java
+@Entity
+@Table(name="profesor")
+public class Profesor {
+
+    @Id
+    @Column(length=10)
+    private Long id;
+
+    @Column(length = 9, unique = true)
+    private String nif;
+
+    @Column(length = 25, nullable = false)
+    private String nombre;
+
+    @ManyToOne
+    private Departamento idDepartamento;
+
+    // Constructor vacío
+    public Profesor() {}
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNif() { return nif; }
+    public void setNif(String nif) { this.nif = nif; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public Departamento getIdDepartamento() { return idDepartamento; }
+    public void setIdDepartamento(Departamento idDepartamento) { this.idDepartamento = idDepartamento; }
+
+    @Override
+    public String toString() {
+        return "String generico";
+    }
+}
+```
+
 
