@@ -1,21 +1,33 @@
-# 📌 Conectar una BBDD a un proyecto Spring Boot.
-Para conectar una base de datos a un proyecto Spring Boot es necesario incluir las dependencias indicadas.   
-En este ejemplo para la base de datos usamos un servidor de MySQL con la dependencia de `MySQL Driver` y `Spring Data JPA`.   
-   
-![imagen](https://github.com/user-attachments/assets/9162e9af-88d6-4077-80e9-552f0e10e986)
+# Conectar una BBDD a un proyecto Spring Boot.
+1. Configuración de proyecto - dependencias necesarias.
+2. Parametros de conexión en el fichero de configuración yaml.
+3. Objetos de persistencia en Java.
 
-**¿Que es Spring Data JPA?**   
-Spring Data JPA Es un Api de persistencia de datos de Spring Boot que facilita la creación de repositorios para realizar operaciones de persistencia (CRUD) sin necesidad de 
+
+# 📌 Configuración de proyecto - dependencias necesarias.
+Para conectar una base de datos a nuestra aplicación deberemos un driver (o conector) adecuado y la api de persistencia de java.
+- Para un servidor `MySQL` incluiremos la dependencia de `MySQL Driver` como controlador.
+- Como API de persistencia incluiremos `Spring Data JPA`.
+    
+<p align="center" >
+   <img src="https://github.com/user-attachments/assets/5b1b30de-d123-4724-aeec-212e421a26d1"><img>
+</p>
+   
+>**NOTA: ¿Que es Spring Data JPA?**   
+>Spring Data JPA Es un Api de persistencia de datos de Spring Boot que facilita la creación de repositorios para realizar operaciones de persistencia (CRUD) sin necesidad de 
 escribir manualmente consultas SQL o implementar las interfaces JPA básicas. Es estrictamente necesaria? NO, pero facilita muchisimo el trabajo y minimiza lineas de código a 
 escribir para interactuar con la base de datos.
-
    
-## 🔹 Fichero de configuración _application.yaml_ .
-
+     
+# 📌 Configuración de la conexión en fichero _application.yaml_ .
 >[!IMPORTANT]
 >Una vez lanzado el proyecto en eclipse, borramos el fichero `project.properties` para utilizar en su lugar un fichero `application.yml`
 >   
 >![imagen](https://github.com/user-attachments/assets/2e848b19-92b0-43db-97cb-6071d8bd9a0d)
+
+# 📌 Creación de modelos o entidades.
+
+
 
     
 Los ficheros de propiedades son los que permiten configurar el arranque de nuestra aplicación en Spring Boot. Sin ellos, no podríamos especificar dónde está nuestra BBDD, 
@@ -28,12 +40,6 @@ la aplicación, se especifica qué fichero de configuración utilizar.
 `application.yml` no podrán existir con el mismo nombre otros ficheros aunque tengan extensión distinta.
    
 
-## 🔹 Flujo de trabajo para configurar una conexión.
-Para crear una conexión a base de datos de una aplicación Spring necesitamos 3 elementos.
-1. Motor de base de datos.
-   - Asegurarse del nombre de la base de datos.
-2. Parametros de conexión en el fichero de configuración yaml.
-3. Objetos de persistencia en Java.
 
 ### ▫️ Motor de base de datos.
 Con esto me refiero a un motor como MySQL en docker o alguna instancia disponible en red.
