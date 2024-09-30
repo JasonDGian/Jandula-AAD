@@ -70,7 +70,7 @@ Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para e
 - **@Id:** Indica la clave primaria.
 - **@Column:** Define propiedades específicas de las columnas (longitud, unicidad, obligatoriedad).
 - **@ManyToOne:** Define una relación muchos-a-uno con otra entidad (clave foránea).
-- **@OneToMany:**
+- **@OneToMany:** 
 - **OP
 
 ## 🔹 Definición de atributos de clase.
@@ -79,7 +79,11 @@ Es fundamental usar camelCase para los nombres de los atributos de la clase, ya 
 ## 🔹 Constructor y metodos de acceso.
 Es esencial crear un constructor vacío y los métodos de acceso (get/set) para que Spring pueda transferir información entre la base de datos y el programa.
 
-**Ejemplo de un modelo.**
+## 🔹 Definición de relaciones.
+//TODO 
+Elaborar sobre las distintas relaciones.
+
+## 🔹 Ejemplo de un modelo.
 ```java
 @Entity
 @Table(name="profesor")
