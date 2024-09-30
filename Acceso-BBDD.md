@@ -54,11 +54,11 @@ logging: #Sección de configuración del sistema de logs en Spring.
 
 # 📌 Creación de modelos o entidades.
 Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para esta operación es necesario utilizar ciertas anotaciones especiales de Spring Data JPA.
-- @Entity.
-- @Table
-- @ID
-- @Column
-- @ManyToOne
+- **@Entity:** Marca la clase como una tabla en la base de datos.
+- **@Table:** Define el nombre de la tabla.
+- **@Id:** Indica la clave primaria.
+- **@Column:** Define propiedades específicas de las columnas (longitud, unicidad, obligatoriedad).
+- **@ManyToOne:** Define una relación muchos-a-uno con otra entidad (clave foránea).
 
 **Ejemplo de un modelo.**
 ```java
