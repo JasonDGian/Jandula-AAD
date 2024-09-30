@@ -1,10 +1,10 @@
-# Conectar una BBDD a un proyecto Spring Boot.
+# 📌 Conectar una BBDD a un proyecto Spring Boot.
 1. Configuración de proyecto - dependencias necesarias.
 2. Parametros de conexión en el fichero de configuración yaml.
 3. Objetos de persistencia en Java.
 
 
-# 📌 Configuración de proyecto - dependencias necesarias.
+# 📍 Configuración de proyecto - dependencias necesarias.
 Para conectar una base de datos a nuestra aplicación necisaremos un _driver_ (o conector) adecuado y la API de persistencia de java.
 - Para un servidor `MySQL` incluiremos la dependencia de `MySQL Driver` como controlador.
 - Como API de persistencia incluiremos `Spring Data JPA`.
@@ -19,7 +19,7 @@ escribir manualmente consultas SQL o implementar las interfaces JPA básicas. Es
 escribir para interactuar con la base de datos.
    
      
-# 📌 Configuración de la conexión en fichero _application.yaml_ .
+# 📍 Configuración de la conexión en fichero _application.yaml_ .
 >[!IMPORTANT]
 >Una vez lanzado el proyecto en eclipse, borramos el fichero `project.properties` para utilizar en su lugar un fichero `application.yml`
 >   
@@ -51,8 +51,9 @@ logging: #Sección de configuración del sistema de logs en Spring.
     max-history: 20 # Especifica el número máximo de archivos históricos de logs que se guardarán.
     total-size-cap: 10MB # Indica el tamaño total máximo permitido para todos los archivos de log acumulados.
 ```
-
-# 📌 Creación de modelos o entidades.
+   
+     
+# 📍 Creación de modelos o entidades.
 Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para esta operación es necesario utilizar ciertas anotaciones especiales de Spring Data JPA.
 - **@Entity:** Marca la clase como una tabla en la base de datos.
 - **@Table:** Define el nombre de la tabla.
