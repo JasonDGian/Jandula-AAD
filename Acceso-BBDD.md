@@ -40,7 +40,7 @@ IMPORTANTE: Nota como **NO SON TABULACIONES**. Cada indentación se realiza con 
 ```yaml
 spring:
   jpa.hibernate.ddl-auto: create
-    datasoure:
+    datasource:
       url: jbdc:mysql://localhost:3306/mi_base_datos
       username: root
       password: 1234
