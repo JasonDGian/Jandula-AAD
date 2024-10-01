@@ -7,8 +7,6 @@
 - Disponer de un motor de BBDD o privilegios para instalar uno (puede ser contenedorizado).
 - Conocer el nombre de la base de datos.
 - Conocer los credenciales de acceso (usuario, contraseña) del usuario con privilegios necesarios.
-- 
-
 
 
 # 📍 Configuración de proyecto - dependencias necesarias.
@@ -72,6 +70,8 @@ Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para e
 - **@ManyToOne:** Define una relación muchos-a-uno con otra entidad (clave foránea).
 - **@OneToMany:** Define una relación uno-a-muchos con otra entidad (clave foránea).
 - **@OneToOne:** Define una relación uno-a-uno con otra entidad (clave foránea).
+
+Para más info sobre como mapear relaciones consulta el documento [mapeado de relaciones](https://github.com/JasonDGian/Jandula-AAD/blob/main/Mapeado-de-relaciones.md).
 
 ## 🔹 Definición de atributos de clase.
 Es fundamental usar camelCase para los nombres de los atributos de la clase, ya que Spring los analiza para generar los nombres de las columnas, convirtiendo el camelCase a snake_case.
