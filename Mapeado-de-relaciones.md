@@ -97,7 +97,32 @@ private EntidadA entidadA;
 @OneToOne(mappedBy = "departamento") // 'departamento' es el atributo que contiene la clave foránea en 'Empleado'.
 private Empleado empleado;
 ```
+   
+## 📍 Relaciones 1:n - @OneToMany UNIDIRECCIONAL   
+En este tipo de relación, una entidad puede estar relacionada con múltiples instancias de otra entidad, pero la entidad "muchos" no tiene un vínculo de vuelta con la entidad "uno". 
+Esto significa que desde la perspectiva de la entidad "uno", puedes acceder a todas las instancias de la entidad "muchos", pero la entidad "muchos" no puede referirse a la entidad "uno".
 
+![imagen](https://github.com/user-attachments/assets/7525f9d5-33f8-444a-9a33-7a10fa43f2c4)
+
+
+### En la entidad que carga con  "los muchos".
+**Sintaxis:**   
+```java
+@OneToMany
+@JoinColumn( "id_columna" )
+private List<EntidadB> entidadB;
+```
+
+**Ejemplo**
+```java
+@OneToMany
+@JoinColumn( "cliente_id" )
+private List<Pedido> pedidos;
+```
+
+
+
+   
 
 
 - @OneToOne: Relación uno a uno.
