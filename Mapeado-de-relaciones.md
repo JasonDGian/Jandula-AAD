@@ -18,8 +18,18 @@ En una relación bidireccional, **ambas entidades pueden acceder a la otra**, pe
 
    
 ---
+# 📌 Tipos de relaciones.  
+Las relaciones pueden ser de los siguientes tipos: 
+- 1:1 · Unidireccional.
+- 1:1 · Bidireccional.
+- 1:n · Unidireccional.
+- 1:n · Bidireccional.
+- n:1 · Unidireccional.
+- n:1 · Bidireccional.
+- n:m · Unidireccional.
+- n:m · Bidireccional.
    
-# 📍 Relaciones 1:1 - @OneToOne UNIDIRECCIONAL
+## 📍 Relaciones 1:1 - @OneToOne UNIDIRECCIONAL
 En las relaciones **Unidireccionales 1:1** solo una de las entidades contiene la relación y no se declara un `mappedBy`.
    
 <!-- <p align="center"> 
@@ -88,3 +98,16 @@ private EntidadA entidadA;
 private Empleado empleado;
 ```
 
+
+
+- @OneToOne: Relación uno a uno.
+- @OneToMany: Relación uno a muchos.
+- @ManyToOne: Relación muchos a uno.
+- @ManyToMany: Relación muchos a muchos.
+  
+- @JoinColumn: Especifica la clave foránea.
+- @JoinTable: Define una tabla intermedia en relaciones ManyToMany.
+- @MappedBy: Especifica el lado inverso de una relación bidireccional.
+  
+- @Cascade: Controla las operaciones en cascada.
+- @Fetch: Controla la estrategia de carga (lazy o eager).
