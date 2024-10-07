@@ -102,7 +102,9 @@ private Empleado empleado;
 En este tipo de relación, una entidad puede estar relacionada con múltiples instancias de otra entidad, pero la entidad "muchos" no tiene un vínculo de vuelta con la entidad "uno". 
 Esto significa que desde la perspectiva de la entidad "uno", puedes acceder a todas las instancias de la entidad "muchos", pero la entidad "muchos" no puede referirse a la entidad "uno".
 
-![imagen](https://github.com/user-attachments/assets/7525f9d5-33f8-444a-9a33-7a10fa43f2c4)
+<p align="center"> 
+  <img src="https://github.com/user-attachments/assets/86b84830-78e8-4ae5-a4b5-040992a5b155">
+</p> 
 
 
 **En la entidad que carga con  "los muchos".**
@@ -120,6 +122,9 @@ private List<EntidadB> entidadB;
 @JoinColumn( "cliente_id" )
 private List<Pedido> pedidos;
 ```
+
+## 📍 Relaciones 1:n - @OneToMany UNIDIRECCIONAL   
+
 
 
 
