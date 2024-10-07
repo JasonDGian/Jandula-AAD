@@ -68,7 +68,7 @@ Esta estructura bidireccional permite navegar en ambas direcciones entre las dos
   <img src="https://github.com/user-attachments/assets/09440764-7d79-421e-b108-dda72d5c514c">
 </p> 
 
-### En la entidad que carga con la relación - columna FK.
+**En la entidad que carga con la relación - columna FK.**
 **Sintaxis:**   
 ```java
 @OneToOne
@@ -84,7 +84,7 @@ private Departamento departamento;
 
 ```
 
-### En la entidad que NO carga con la relación - mapeado.
+**En la entidad que NO carga con la relación - mapeado.**
 En la entidad opuesta, donde NO se almacena la clave foránea, se usa `mappedBy` para especificar el atributo que controla la relación en la otra entidad.   
 **Sintaxis:**   
 ```java
@@ -105,7 +105,8 @@ Esto significa que desde la perspectiva de la entidad "uno", puedes acceder a to
 ![imagen](https://github.com/user-attachments/assets/7525f9d5-33f8-444a-9a33-7a10fa43f2c4)
 
 
-### En la entidad que carga con  "los muchos".
+**En la entidad que carga con  "los muchos".**
+
 **Sintaxis:**   
 ```java
 @OneToMany
