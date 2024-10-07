@@ -103,9 +103,8 @@ En este tipo de relación, una entidad puede estar relacionada con múltiples in
 Esto significa que desde la perspectiva de la entidad "uno", puedes acceder a todas las instancias de la entidad "muchos", pero la entidad "muchos" no puede referirse a la entidad "uno".
 
 <p align="center"> 
-  <img src="https://github.com/user-attachments/assets/86b84830-78e8-4ae5-a4b5-040992a5b155">
+  <img src="https://github.com/user-attachments/assets/e96b3dae-5c97-40cc-8210-de093c2d7e70">
 </p> 
-
 
 **En la entidad que carga con  "los muchos".**
 
@@ -122,9 +121,13 @@ private List<EntidadB> entidadB;
 @JoinColumn( "cliente_id" )
 private List<Pedido> pedidos;
 ```
-
-## 📍 Relaciones 1:n - @OneToMany UNIDIRECCIONAL   
-
+    
+## 📍 Relaciones 1:n - @OneToMany BIDIRECCIONAL   
+En este tipo de relación, una entidad puede estar relacionada con múltiples instancias de otra entidad. Al mismo tiempo, cada entidad en el lado "muchos" tiene una referencia de vuelta a la entidad "uno". Esta estructura es útil cuando se necesita acceder a ambas partes de la relación desde cualquier lado.
+   
+<p align="center"> 
+  <img src="https://github.com/user-attachments/assets/e062d1b3-1864-4685-b5ea-662888b51053">
+</p> 
 
 
 
