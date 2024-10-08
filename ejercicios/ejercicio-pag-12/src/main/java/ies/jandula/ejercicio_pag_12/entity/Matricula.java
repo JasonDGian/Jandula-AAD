@@ -1,0 +1,35 @@
+package ies.jandula.ejercicio_pag_12.entity;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Matricula
+{
+	@Id
+	@ManyToOne
+	@JoinColumn( name = "id_alumno")
+	private Alumno alumno;
+	@Id
+	@ManyToOne
+	@JoinColumn( name = "id_asignatura")
+	private Asignatura asignatura;
+	@Id
+	@ManyToOne
+	@JoinColumn( name = "id_curso")
+	private Curso curso;
+	
+	
+}
