@@ -11,21 +11,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "departamento")
-public class DepartamentoEntity {
-	
+@Entity
+@Table( name = "bloque")
+public class BloqueEntity
+{	
 	@Id
-	@Column(length = 100)
-	private String nombre;
+	@Column( length = 100)
+	private String id;
 	
-	@OneToMany(mappedBy = "departamentoProprietario")
-	private List<AsignaturaEntity> asignaturaPrestada;
-	
-	@OneToMany(mappedBy = "departamentoReceptor")
-	private List<AsignaturaEntity> asignaturaRecibida;
-
+	@OneToMany( mappedBy = "bloqueId")
+	private List<AsignaturaEntity> asignatura;
 }

@@ -1,6 +1,5 @@
 package ies.jandula.matriculas.entities;
 
-import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,11 +9,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Datos_Bruto_Alumno_Matricula")
+@Table(name="datos_bruto_alumno_matricula")
 public class DatosBrutosAlumnoMatriculaEntity
 {
 	@Id
-	private long Id;
+	private int Id;
 	
 	@Column( length = 50, nullable = false)
 	private String nombre;

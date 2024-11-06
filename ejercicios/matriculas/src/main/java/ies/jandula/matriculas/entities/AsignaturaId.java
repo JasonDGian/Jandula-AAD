@@ -11,12 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AsignaturaId implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private int id;
+	private int curso;
 	
 	private String etapa;
 	

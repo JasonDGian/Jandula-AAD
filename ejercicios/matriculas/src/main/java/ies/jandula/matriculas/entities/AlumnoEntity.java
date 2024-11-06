@@ -5,27 +5,31 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "departamento")
-public class DepartamentoEntity {
-	
+@Entity
+@Table( name = "alumno")
+public class AlumnoEntity
+{
 	@Id
-	@Column(length = 100)
+	private int id;
+	
+	@Column(length = 50, nullable = false)
 	private String nombre;
 	
-	@OneToMany(mappedBy = "departamentoProprietario")
-	private List<AsignaturaEntity> asignaturaPrestada;
+	@Column(length = 100, nullable = false)
+	private String apellidos;
 	
-	@OneToMany(mappedBy = "departamentoReceptor")
-	private List<AsignaturaEntity> asignaturaRecibida;
+	@OneToMany(mappedBy = "alumnoId")
+	private List<MatriculaEntity> matricula;
+
 
 }
