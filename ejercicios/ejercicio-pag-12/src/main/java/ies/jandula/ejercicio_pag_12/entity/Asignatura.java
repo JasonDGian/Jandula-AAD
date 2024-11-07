@@ -22,13 +22,13 @@ public class Asignatura
 
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private long id;
+	private Long id;
 	
-	private double creditos;
+	private Double creditos;
 	
-	private int cuatrimestre;
+	private Integer cuatrimestre;
 	
-	private int curso;
+	private Integer curso;
 	
 	private String nombre;
 	

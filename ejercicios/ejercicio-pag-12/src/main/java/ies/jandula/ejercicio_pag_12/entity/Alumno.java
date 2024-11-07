@@ -21,7 +21,7 @@ public class Alumno
 	
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private long id;
+	private Long id;
 	
 	private String apellido1;
 	private String apellido2;

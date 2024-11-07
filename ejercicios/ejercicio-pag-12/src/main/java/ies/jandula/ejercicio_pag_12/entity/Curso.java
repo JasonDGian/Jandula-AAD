@@ -19,11 +19,11 @@ public class Curso
 {
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private long id;
+	private Long id;
 	
-	private int anyo_fin;
+	private Integer anyo_fin;
 	
-	private int any_inicio;
+	private Integer any_inicio;
 	
 	@OneToMany(mappedBy = "curso")
 	private List <Matricula> matricula;
