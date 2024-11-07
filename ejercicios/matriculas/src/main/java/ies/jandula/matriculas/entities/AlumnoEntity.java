@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class AlumnoEntity
 {
 	@Id
-	private int id;
+	private Integer id;
 	
 	@Column(length = 50, nullable = false)
 	private String nombre;

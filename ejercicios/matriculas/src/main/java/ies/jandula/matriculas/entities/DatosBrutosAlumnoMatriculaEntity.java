@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class DatosBrutosAlumnoMatriculaEntity
 {
 	@Id
-	private int Id;
+	private Integer Id;
 	
 	@Column( length = 50, nullable = false)
 	private String nombre;

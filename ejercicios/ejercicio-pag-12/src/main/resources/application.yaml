@@ -15,7 +15,7 @@ logging: #Sección de configuración del sistema de logs en Spring.
   level:
     com.iesjandula: INFO # Define el nivel de log (recursivo).
   file:
-    name: C:\logs\registro.log # ruta y el nombre del archivo donde se guardarán los logs.
+    name: registro.log # ruta y el nombre del archivo donde se guardarán los logs.
     max-size: 1MB # Define el tamaño máximo que puede tener el archivo de log antes de que se cree uno nuevo.
     max-history: 20 # Especifica el número máximo de archivos históricos de logs que se guardarán.
     total-size-cap: 10MB # Indica el tamaño total máximo permitido para todos los archivos de log acumulados.

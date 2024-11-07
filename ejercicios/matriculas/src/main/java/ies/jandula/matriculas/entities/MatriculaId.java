@@ -9,16 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MatriculaId implements Serializable {
-// Identificador de matricula, compuesto por los campos que a la vez componen los
-// los identificadores de asignatura (id compuesto) y alumno (id simple)
-    private static final long serialVersionUID = 1L;
-
-    // Identificador asignatura (compuesto)
-//    private int asignaturaCurso;
-//    private String asignaturaEtapa;
-//    private String asignaturaGrupo;
-//    private String asignaturaNombre; 
-    
+	
+    private static final long serialVersionUID = 1L;  
     
     private AsignaturaId asignaturaId;
     

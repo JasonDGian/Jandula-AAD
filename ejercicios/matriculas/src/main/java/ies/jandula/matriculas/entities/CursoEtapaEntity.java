@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class CursoEtapaEntity
 {
 	@Id
-	private int curso;
+	private Integer curso;
 	@Id
 	private String etapa;
 }

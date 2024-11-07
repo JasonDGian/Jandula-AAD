@@ -22,9 +22,8 @@ public class MatriculaEntity
 	 * Este trozo de código, apunta a la entidad entera, porque el manytoone, solo
 	 * se puede usar par apuntar a entidades copletas, no a campos singulares.
 	 */
-	@Id  // Establece este campo, como clave de la entidad Matricula.
-	@ManyToOne // Relaciona este campo, con la entidad asignatura.
-	// "Se trae" los campos especificados para montar el ID de asignatura (id compuesto)
+	@Id
+	@ManyToOne 
 	@JoinColumns(
 	{ @JoinColumn(name = "asignatura_curso", referencedColumnName = "curso"),
 			@JoinColumn(name = "asignatura_etapa", referencedColumnName = "etapa"),

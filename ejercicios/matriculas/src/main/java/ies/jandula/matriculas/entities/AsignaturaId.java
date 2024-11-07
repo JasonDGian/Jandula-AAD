@@ -13,7 +13,7 @@ public class AsignaturaId implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-	private int curso;
+	private Integer curso;
 	
 	private String etapa;
 	

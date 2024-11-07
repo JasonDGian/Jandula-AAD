@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class AsignaturaEntity {
 	
 	@Id
-	private int curso;
+	private Integer curso;
 	
 	@Id
 	@Column(length = 50)
