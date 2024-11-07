@@ -145,3 +145,14 @@ En este tipo de relación, una entidad puede estar relacionada con múltiples in
   
 - @Cascade: Controla las operaciones en cascada.
 - @Fetch: Controla la estrategia de carga (lazy o eager).
+
+
+
+
+
+
+
+
+
+
+
