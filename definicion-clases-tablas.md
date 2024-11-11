@@ -43,8 +43,9 @@ public class EjemploEntidad
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EjemploEntidadId
+public class EjemploEntidadId implements Serializable
 {
+  private static final long serialVersionUID = 1L;
   private Date fecha;
   private String nombre;
 }
