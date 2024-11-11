@@ -47,7 +47,6 @@ public class EjemploEntidadId
 {
   private Date fecha;
   private String nombre;
-  private String descripcion;
 }
 ```
 
