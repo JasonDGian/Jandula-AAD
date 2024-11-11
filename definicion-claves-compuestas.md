@@ -39,6 +39,8 @@ public class EjemploEntidad
 ```
    
 **Clase de Clave compuesta**
+- Debe implementar la interfaz `Serializable`.
+- Sus atributos deben de ser de tipo primitivo (cuando posible) y de nombre identico a su contraparte en la clase `@Entity`.
 ```java
 @Data
 @AllArgsConstructor
