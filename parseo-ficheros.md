@@ -101,3 +101,20 @@ public class EjercicioPag12Application {
 
 }
 ```
+
+# 📌 Asignando atributos que son a su vez entidades.
+Para asignar (set) un atributo de una entidad que representa a su vez otra entidad usamos el siguiente mecanismo.
+
+1. Recuperamos la entidad mediante su ID.
+2. Realizamos los controles pertinentes y levantamos las excepciones necesarias.
+3. Asignamos el valor desenvolviendo el optional.
+
+```java
+// Recuperamos la entidad mediante su ID.
+Optional<Profesor> profesor = profesorRepo.findById( Long.valueOf(campos[6]) );
+
+// Asignamos el profesor si existe.
+if ( profesor.isPresent() ) {
+asignatura.setProfesor( profesor.get());
+}
+```
