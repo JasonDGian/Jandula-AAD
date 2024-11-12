@@ -1,10 +1,5 @@
 # 📌 Como parsear ficheros en Java Spring.
-El parseo de ficheros CSV y TSV es una necesidad o caracteristica comun en proyectos java. <!--Spring Boot ofrece distintas herramientas para esta tarea que son eficientes y faciles de implementar.-->
-El proceso a seguir es el siguiente.
-1. Crear la clase `parser`.
-2. Inyectar la dependencia de la clase parser creada.
-3. Ejecutar los comandos al correr la aplicacion.
-
+El parseo de ficheros CSV y TSV es una necesidad o caracteristica comun en proyectos java.
    
 ### 1. Crear la clase Interfaz que recoge los metodos del parser.
 Esta clase sirve para el sistema de inversión de control.
