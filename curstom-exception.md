@@ -1,5 +1,24 @@
 # 📌 Excepcion personalizada con codigos HTTP custom.
+Entre los códigos de error HTTP existe un rango disponible para uso personalizado que podemos emplear con las excepciones que definimos dentro de nuestra aplicación.
 
+Los códigos de error disponibles son los siguientes:      
+- Errores en lado **cliente**: 490 - 499   
+- Errores en lado **servidor**: 590 - 599
+
+
+## 📍 Añadir dependencia al POM.
+   
+```xml
+<dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-lang3</artifactId>
+</dependen
+```
+   
+   
+## 📍 Crear la clase de excepción en paquete `.utils`
+En este paquete se encuentra un metodo que mapeará el mensaje de la excepción, de haberlo, a formato transferible `Json`.
+   
 ```java
 package ies.jandula.matriculas.utils;
 
