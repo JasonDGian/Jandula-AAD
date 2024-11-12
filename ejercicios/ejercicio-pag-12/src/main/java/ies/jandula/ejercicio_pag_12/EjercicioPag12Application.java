@@ -27,11 +27,11 @@ public class EjercicioPag12Application implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         // Assuming you have a CSV file named "alumnos.csv" in the resources folder or an accessible path
-        File file = new File("res"+File.separator+"alumno.csv");  // Update this path if necessary
+        File fileAlumnos = new File("res"+File.separator+"alumno.csv");  // Update this path if necessary
 
         // Check if the file exists to avoid errors
-        if (file.exists()) {
-            try (Scanner scanner = new Scanner(new FileInputStream(file))) {
+        if (fileAlumnos.exists()) {
+            try (Scanner scanner = new Scanner(new FileInputStream(fileAlumnos))) {
                 // Call the parseaFichero method
                 parserAlumno.parseaFichero(scanner);
                 System.out.println("CSV file parsed successfully.");
@@ -39,7 +39,15 @@ public class EjercicioPag12Application implements CommandLineRunner {
                 System.err.println("Error while parsing CSV file: " + e.getMessage());
             }
         } else {
-            System.err.println("File not found: " + file.getAbsolutePath());
+            System.err.println("File not found: " + fileAlumnos.getAbsolutePath());
+        }
+        
+        
+        // seccion asignaturas.
+        File fileAsignaturas = new File( "res"+File.separator + "asignatura.csv" );
+        
+        if ( fileAsignaturas.exists() ) {
+        	try ( scanner = new Scanner( new FileInputStream(fileAsignaturas) );)
         }
     }
 }

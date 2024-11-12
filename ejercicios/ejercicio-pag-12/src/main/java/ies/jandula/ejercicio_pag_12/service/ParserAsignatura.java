@@ -32,7 +32,7 @@ public class ParserAsignatura implements IParserAsignatura
 	public void parseaFichero(Scanner scanner) throws UniversidadServerError
 	{
 		// Saltamos linea de cabeceras.
-		scanner.hasNextLine();
+		scanner.nextLine();
 		
 		// Mientras que el fichero tenga una linea disponible.
 		while ( scanner.hasNextLine() ) {

@@ -1,7 +1,7 @@
 package ies.jandula.ejercicio_pag_12.service;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,8 @@ import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
 public class ParserAlumno implements IParserAlumno
 {
 	
+	
+	
 	@Autowired
 	private IAlumnoRepository alumnoRepo;
 	
@@ -23,7 +25,7 @@ public class ParserAlumno implements IParserAlumno
 	public void parseaFichero ( Scanner scanner ) throws UniversidadServerError{
 		
 		// Saltamos linea de cabeceras.
-		scanner.hasNextLine();
+		scanner.nextLine();
 		
 		// Mientras que el fichero tenga una linea disponible.
 		while ( scanner.hasNextLine() ) {
@@ -43,7 +45,7 @@ public class ParserAlumno implements IParserAlumno
 			alumno.setCiudad( campos[5]);
 			alumno.setDireccion( campos[6] );
 			alumno.setTelefono( campos[7] );
-			alumno.setFechaNacimiento( LocalDate.parse(campos[8]) );
+			alumno.setFechaNacimiento( LocalDate.parse(campos[8], DateTimeFormatter.ofPattern("dd/MM/yyyy")  ) );
 			alumno.setSexo( campos[9] );
 			
 			// Guardamos la entidad en bases de datos.

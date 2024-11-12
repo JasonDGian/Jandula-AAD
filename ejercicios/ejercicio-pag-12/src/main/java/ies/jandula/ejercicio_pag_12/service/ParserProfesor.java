@@ -1,6 +1,7 @@
 package ies.jandula.ejercicio_pag_12.service;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -43,7 +44,7 @@ public class ParserProfesor implements IParserProfesor
 			profe.setCiudad(campos[5]);
 			profe.setDireccion(  campos[6]);
 			profe.setTelefono( campos[7] );
-			profe.setFechaNacimiento( LocalDate.parse( campos[8] ) );
+			profe.setFechaNacimiento( LocalDate.parse( campos[8] , DateTimeFormatter.ofPattern("dd/MM/yyyy")) );
 			profe.setSexo( campos[9]);
 			
 			Optional<Departamento> depto = this.deptoRepo.findById( Long.valueOf( campos[10] ));
