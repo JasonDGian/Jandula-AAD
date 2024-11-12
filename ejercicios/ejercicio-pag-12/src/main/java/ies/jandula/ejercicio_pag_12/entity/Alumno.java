@@ -1,6 +1,6 @@
 package ies.jandula.ejercicio_pag_12.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -27,7 +27,7 @@ public class Alumno
 	private String apellido2;
 	private String ciudad;
 	private String direccion;
-	private Date fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	private String nif;
 	private String nombre;
 	private String sexo;

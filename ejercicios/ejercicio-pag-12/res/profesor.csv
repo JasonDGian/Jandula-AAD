@@ -1,0 +1,13 @@
+id,nif,nombre,apellido1,apellido2,ciudad,direccion,telefono,fecha_nacimiento,sexo,id_departamento
+1,11105554G,Zoe,Ramirez,Gea,Almería,C/ Marte,618223876,19/08/1979,M,1
+2,38223286T,David,Schmidt,Fisher,Almería,C/ Venus,678516294,19/01/1978,H,2
+3,79503962T,Cristina,Lemke,Rutherford,Almería,C/ Saturno,669162534,21/08/1977,M,3
+4,61142000L,Esther,Spencer,Lakin,Almería,C/ Plutón,,19/05/1977,M,4
+5,85366986W,Carmen,Streich,Hirthe,Almería,C/ Almanzora,,29/04/1971,M,4
+6,73571384L,Alfredo,Stiedemann,Morissette,Almería,C/ Guadalquivir,950896725,01/02/1980,H,6
+7,82937751G,Manolo,Hamill,Kozey,Almería,C/ Duero,950263514,02/01/1977,H,1
+8,80502866Z,Alejandro,Kohler,Schoen,Almería,C/ Tajo,668726354,14/03/1980,H,2
+9,10485008K,Antonio,Fahey,Considine,Almería,C/ Sierra de los Filabres,,18/03/1982,H,3
+10,85869555K,Guillermo,Ruecker,Upton,Almería,C/ Sierra de Gádor,,05/05/1973,H,4
+11,04326833G,Micaela,Monahan,Murray,Almería,C/ Veleta,662765413,25/02/1976,H,5
+12,79221403L,Francesca,Schowalter,Muller,Almería,C/ Quinto pino,,31/10/1980,H,6
