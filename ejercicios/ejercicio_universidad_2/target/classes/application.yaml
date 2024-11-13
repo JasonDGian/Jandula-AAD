@@ -1,0 +1,11 @@
+spring: 
+  jpa.hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/ejercicio?createDatabaseIfNotExits=true
+    username: root
+    password: root
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5		
+server:
+  port: 8082
