@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ies.jandula.ejercicio_pag_12.entity.Alumno;
 import ies.jandula.ejercicio_pag_12.entity.Asignatura;
@@ -16,6 +17,7 @@ import ies.jandula.ejercicio_pag_12.repositories.IMatriculaRepository;
 import ies.jandula.ejercicio_pag_12.utils.Constants;
 import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
 
+@Service
 public class ParserMatricula implements IParserMatricula
 {
 	@Autowired

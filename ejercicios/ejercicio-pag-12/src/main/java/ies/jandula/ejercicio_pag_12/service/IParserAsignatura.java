@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
 
-public interface IParserAsignatura
+public interface IParserAsignatura extends GenericParser
 {
-	public void parseaFichero(Scanner scanner) throws UniversidadServerError ;
 }

@@ -1,10 +1,6 @@
 package ies.jandula.ejercicio_pag_12.service;
 
-import java.util.Scanner;
-
-import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
-
-public interface IParserProfesor
+public interface IParserProfesor extends GenericParser
 {
-	public void parseaFichero(Scanner scanner) throws UniversidadServerError;
+	//public void parseaFichero(Scanner scanner) throws UniversidadServerError;
 }

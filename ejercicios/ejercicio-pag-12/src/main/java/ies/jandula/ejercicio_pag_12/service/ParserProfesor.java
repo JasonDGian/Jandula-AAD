@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ies.jandula.ejercicio_pag_12.entity.Departamento;
 import ies.jandula.ejercicio_pag_12.entity.Profesor;
@@ -14,6 +15,7 @@ import ies.jandula.ejercicio_pag_12.repositories.IProfesorRepository;
 import ies.jandula.ejercicio_pag_12.utils.Constants;
 import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
 
+@Service
 public class ParserProfesor implements IParserProfesor
 {
 

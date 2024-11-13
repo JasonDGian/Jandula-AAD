@@ -31,6 +31,7 @@ public class ParserAlumno implements IParserAlumno
 		while ( scanner.hasNextLine() ) {
 			
 			String[] campos = scanner.nextLine().split(Constants.DELIMITADOR_CSV);
+			System.out.print( campos.toString() );
 			
 			// Generamos una nueva instancia donde guardar la información sacada del CSV.
 			Alumno alumno = new Alumno();

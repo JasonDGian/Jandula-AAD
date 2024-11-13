@@ -3,12 +3,14 @@ package ies.jandula.ejercicio_pag_12.service;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ies.jandula.ejercicio_pag_12.entity.Curso;
 import ies.jandula.ejercicio_pag_12.repositories.ICursoRepository;
 import ies.jandula.ejercicio_pag_12.utils.Constants;
 import ies.jandula.ejercicio_pag_12.utils.UniversidadServerError;
 
+@Service
 public class ParserCurso implements IParserCurso
 {
 	@Autowired
