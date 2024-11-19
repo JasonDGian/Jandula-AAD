@@ -17,13 +17,12 @@ Cuando producimos una tabla nueva en una relacion M:M podemos hacerla bidirecion
 @IdClass( MecanicoReparaCocheId.class )
 public class MecanicoReparaCoche
 {
-	
 	@Id
-	@ManyToOne
+	@ManyToOne // Absorcion de la clave primaria.
 	private Coche coche;
 	
 	@Id
-	@ManyToOne
+	@ManyToOne // Absorcion de la clave primaria.
 	private Mecanico mecanico;
 	
 	@Id
@@ -31,7 +30,6 @@ public class MecanicoReparaCoche
 	
 	@Id
 	private float horas;
-	
 }
 ```
 **Entidad mecanico**
@@ -45,7 +43,8 @@ public class Mecanico extends Persona
 	private Date fechaContratacion;
 	
 	private int salario;
-	
+
+	// Inversión de la relacion en la tabla spawn
 	@OneToMany( mappedBy = "mecanico" ) 
 	private List<MecanicoReparaCoche> reparaciones;
 }
@@ -60,7 +59,6 @@ public class Mecanico extends Persona
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Coche
 {
-	
 	@Id
 	private String matricula;
 	
@@ -70,9 +68,7 @@ public class Coche
 	
 	private String color;
 	
-	@ManyToOne
-	private PersonaCliente cliente;
-	
+	// Inversión de la relacion en la tabla spawn
 	@OneToMany(mappedBy = "coche")
 	private List<MecanicoReparaCoche> reparacion;
 }
