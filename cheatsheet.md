@@ -1,5 +1,5 @@
 ### 📌 Excepción custom
-[Excepcion link]("https://github.com/JasonDGian/Jandula-AAD/blob/main/curstom-exception.md")
+[Excepcion link apuntes](https://github.com/JasonDGian/Jandula-AAD/blob/main/curstom-exception.md)
 
 
 ### 📌 Parsear CSV.
