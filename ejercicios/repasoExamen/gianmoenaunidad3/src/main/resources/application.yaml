@@ -1,0 +1,8 @@
+spring:
+  jpa.hibernate.ddl-auto: create # Configura cómo se debe gestionar el esquema de la base de datos.
+  datasource:
+    url: jdbc:mysql://localhost:3306/concesionario # URL de conexión a la base de datos MySQL.
+    username: root # Nombre de usuario para conectarse a la base de datos.
+    password: 1234 # Contraseña correspondiente al usuario especificado.
+server:
+  port: 8085 # Define el puerto en el que se ejecutará la aplicación Spring Boot.
