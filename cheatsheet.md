@@ -1,3 +1,29 @@
+### 📌 Application yaml.
+```yaml
+spring:
+  jpa.hibernate.ddl-auto: create # Configura cómo se debe gestionar el esquema de la base de datos.
+  datasource:
+    url: jdbc:mysql://localhost:3306/universidad # URL de conexión a la base de datos MySQL.
+    username: root # Nombre de usuario para conectarse a la base de datos.
+    password: 1234 # Contraseña correspondiente al usuario especificado.
+    hikari: # Hikari es un mecanismo de eficiencia de conexiones. Cnoocido como "Pool de conexiones".
+    connection-timeout: 60000 # Establece el tiempo máximo de espera en milisegundos (60 segundos) para obtener una conexión antes de lanzar un error.
+    maximum-pool-size: 5 # Especifica el número máximo de conexiones permitidas en el pool de conexiones simultáneas.
+
+server:
+  port: 8085 # Define el puerto en el que se ejecutará la aplicación Spring Boot.
+
+logging: #Sección de configuración del sistema de logs en Spring.
+  level:
+    com.iesjandula: INFO # Define el nivel de log para el paquete 'com.iesjandula'(recursivo).
+  file:
+    name: C:\logs\holaMundo.log # ruta y el nombre del archivo donde se guardarán los logs.
+    max-size: 1MB # Define el tamaño máximo que puede tener el archivo de log antes de que se cree uno nuevo.
+    max-history: 20 # Especifica el número máximo de archivos históricos de logs que se guardarán.
+    total-size-cap: 10MB # Indica el tamaño total máximo permitido para todos los archivos de log acumulados.
+```
+
+
 ### 📌 Excepción custom
 [Excepcion link apuntes](https://github.com/JasonDGian/Jandula-AAD/blob/main/curstom-exception.md)
 
