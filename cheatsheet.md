@@ -245,6 +245,9 @@ public class MecanicoReparaCoche
 }
 ```
 
+### 📌 Claves foráneas compuestas.
+[CFC Apuntes](https://github.com/JasonDGian/Jandula-AAD/blob/main/claves-y-relaciones.md)
+
 ### 📌 Herencias
 Especificacion de herencia: 
 - @Inheritance(strategy = InheritanceType.JOINED)
