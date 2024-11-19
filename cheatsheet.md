@@ -119,8 +119,22 @@ if (fichero.exists()) {
 
 **Configurar el endpoint para la recpcion del fichero**.
 ```java
-@RequestMapping( value = "/send/csv", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-public ResponseEntity<?> sendXmlToObjects( @RequestPart MultipartFile xmlFile )
+@RequestMapping(
+    value = "/send/csv",
+    method = RequestMethod.POST,
+    consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+)
+public ResponseEntity<?> sendCsvToObjects(@RequestParam("file") MultipartFile file) {
+    try {
+        // Aquí podrías procesar el archivo
+        String contenido = new String(file.getBytes());
+        return ResponseEntity.ok("Archivo recibido: " + file.getOriginalFilename());
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                             .body("Error al procesar el archivo: " + e.getMessage());
+    }
+}
+
 ```
 
 ### 📌 Relacion bidireccional 1:1
