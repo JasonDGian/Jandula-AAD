@@ -7,7 +7,75 @@
 ```
 
 ### 📌 Relacion bidireccional  M:M
+Cuando producimos una tabla nueva en una relacion M:M podemos hacerla bidirecional de este modo.
+**Tabla spawn**
 ```java
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@IdClass( MecanicoReparaCocheId.class )
+public class MecanicoReparaCoche
+{
+	
+	@Id
+	@ManyToOne
+	private Coche coche;
+	
+	@Id
+	@ManyToOne
+	private Mecanico mecanico;
+	
+	@Id
+	private Date fechaReparacion;
+	
+	@Id
+	private float horas;
+	
+}
+```
+**Entidad mecanico**
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Mecanico extends Persona
+{
+	private Date fechaContratacion;
+	
+	private int salario;
+	
+	@OneToMany( mappedBy = "mecanico" ) 
+	private List<MecanicoReparaCoche> reparaciones;
+}
+```
+
+**Entidad coche**
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Coche
+{
+	
+	@Id
+	private String matricula;
+	
+	private String marca;
+	
+	private String modelo;
+	
+	private String color;
+	
+	@ManyToOne
+	private PersonaCliente cliente;
+	
+	@OneToMany(mappedBy = "coche")
+	private List<MecanicoReparaCoche> reparacion;
+}
 ```
 
 ### 📌 ID compuesto.
@@ -18,11 +86,9 @@
 @NoArgsConstructor
 public class MecanicoReparaCocheId
 {
-	
 	private PersonaCliente cliente;
-	
-	private Coche coche;
 
+	private Coche coche;
 }
 ```
 
@@ -35,7 +101,6 @@ public class MecanicoReparaCocheId
 @IdClass( MecanicoReparaCocheId.class )
 public class MecanicoReparaCoche
 {
-	
 	@Id
 	private Coche coche;
 	
@@ -46,7 +111,6 @@ public class MecanicoReparaCoche
 	private Date fechaReparacion;
 	
 	private float horas;
-	
 }
 ```
 
