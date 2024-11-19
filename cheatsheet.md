@@ -11,6 +11,8 @@
  - Save and flush.
 4. Implementar metodo en endpoint (si necesario) con gestion de excepciones.
 
+[Parseo apuntes](https://github.com/JasonDGian/Jandula-AAD/blob/main/parseo-ficheros.md)
+
 **Ejemplo implementacion de parseo**
 ```java
 @Service
