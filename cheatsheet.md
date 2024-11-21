@@ -125,7 +125,6 @@ catch (ParserConfigurationException exception)
 }
 ```
 
-
 ### 📌 Parsear CSV.
 1. Crear entidades, repositorios etc...
 2. Crear **interfaz** `IEntidadParser`
@@ -188,33 +187,60 @@ public class ParserAlumno implements IParserAlumno
 
 **Metodo de parseo generico**
 ```java
-//Inyeccion de parser.
-@Autowired
-private IParserAlumno parserAlumno;
-
-// Fichero
-File fileAlumnos = new File("res"+File.separator+"alumno.csv");
-
-//Metodo de parseo con interfaz generica.
-private void parseaFichero( File fichero , GenericParser parser ) throws FileNotFoundException {
-
-// si el fichero existe.
-if (fichero.exists()) {
-	// Intento de uso de objeto scanner ( try with? )
-    try (Scanner scanner = new Scanner(new FileInputStream(fichero))) {
+// Metodo que recibe un fichero y un parser para dicho tipo de fichero. 
+private void parseaFichero(File fichero, GenericParser parser) throws UniversidadServerError
+{
+	// Si el fichero no existe, lanza error.
+	if (fichero == null || !fichero.exists()) {
+	    throw new UniversidadServerError(491, "El fichero indicado en el parser no existe.");
+	}
 	
-	// Llama al parser de alumnos
-	parser.parseaFichero(scanner);
-	System.out.println("CSV file parsed successfully.");
-    } catch (UniversidadServerError e) {
-	System.err.println("Error while parsing CSV file: " + e.getMessage());
-    }
-} else {
-    System.err.println("File not found: " + fichero.getAbsolutePath());
-}
-
+	try (Scanner scanner = new Scanner(fichero)) {
+		
+	    // Llama al parser del objeto.
+	    parser.parseaFichero(scanner);
+	    log.info( "Fichero parseado. {}", fichero.getName().toString() );
+	} catch (FileNotFoundException e) {
+		// En caso de error levantar excepcion personalizada.
+	    throw new UniversidadServerError(500, "Error al abrir el fichero.", e);
+	}
 }
 ```
+
+### 📌 Parsear CSV con herencias.
+1. Crear un metodo en la clase de implmentacion del PARSER de la clase padre que reciba un array de valores para inicializar una instancia y devuelva esta instancia incializada.    
+	```java
+		public Coche parseoCocheNuevo( String[] valores ){
+			Coche coche = new Coche();
+		 	coche.setMatricula(valores[1]);
+		 	coche.setMarca(valores[2]);
+			coche.setColor(valores[3]);
+ 			return coche;
+	 	}
+	```
+2. Crear un constructor en el hijo que se base una instancia del padre para configurar los campos heredados.    
+	- Este constructor se alimenta de la instancia creada por el metodo del punto 1.    
+ 	```java
+	 	public CocheNuevo()
+	 	{
+	 		super(coche);
+	 	}
+ 	```    
+      
+3. Crear metodo de parseo que utilice el metodo de la case padre que devuelve una instancia (para Jesús: ESTA ISNTANCIA, ES DE LA CLASE PADRE.).       
+	**Dentro de la logica de parseo de la clase hija**    
+   	```java
+		// Llamada al parser de la clase padre que devuelve una instancia.
+		Coche coche = this.iParseCoche.parseoCoche(valores); // valores = String[]
+
+    		// Llamada al constructor de la clase hija que recibe la superclase.
+    		NuevoCoche nuevoCoche = NuevoCoche(coche);
+
+    		// Asigna los valores a los atributos no comunes.
+    		nuevoCoche.setUnidades(valores[8]);
+    		nuevoCoche.setFuselaje(valores[9]);
+    	```
+   
 
 ### 📌 Parseo mediante EndPoint.
 1. Configurar el endpoint para la recepcion del fichero.
@@ -237,7 +263,6 @@ public ResponseEntity<?> sendCsvToObjects(@RequestParam("file") MultipartFile fi
                              .body("Error al procesar el archivo: " + e.getMessage());
     }
 }
-
 ```
 
 ### 📌 Relacion bidireccional 1:1
@@ -310,6 +335,7 @@ public class MecanicoReparaCoche
 	private float horas;
 }
 ```
+
 **Entidad mecanico**
 ```java
 @Data
