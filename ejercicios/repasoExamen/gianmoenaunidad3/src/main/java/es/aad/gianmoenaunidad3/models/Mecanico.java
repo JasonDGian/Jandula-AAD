@@ -1,6 +1,6 @@
 package es.aad.gianmoenaunidad3.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Mecanico extends Persona
 {
-	private Date fechaContratacion;
+	private LocalDate fechaContratacion;
 	
 	private int salario;
 	
