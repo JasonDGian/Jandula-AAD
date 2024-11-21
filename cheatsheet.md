@@ -53,15 +53,15 @@ public class ParserAlumno implements IParserAlumno
 		// Saltamos linea de cabeceras.
 		scanner.nextLine();
 		
-		// Mientras que el fichero tenga una linea disponible.
+		// Mientras que el fichero tenga una 'siguiente linea' disponible.
 		while ( scanner.hasNextLine() ) {
 			
-			String[] campos = scanner.nextLine().split(Constants.DELIMITADOR_CSV);
-			System.out.print( campos.toString() );
-			
+			String[] campos = scanner.nextLine().split(Constants.DELIMITADOR_CSV); // Consatnte personalizada de DELIMITADOR_CSV
+			Log.debug( "Campos recibidos {}", Arrays.toString(campos) );
+
 			// Generamos una nueva instancia donde guardar la información sacada del CSV.
 			Alumno alumno = new Alumno();
-			
+
 			// A continuación, y prestando atención a la estructura del fichero, 
 			// recuperamos los campos y los asignamos al atributo corerspondiente..
 			alumno.setId( Long.valueOf( campos[0] ) );
@@ -72,10 +72,15 @@ public class ParserAlumno implements IParserAlumno
 			alumno.setCiudad( campos[5]);
 			alumno.setDireccion( campos[6] );
 			alumno.setTelefono( campos[7] );
+
+			try {
 			alumno.setFechaNacimiento(
 				LocalDate.parse(campos[8], DateTimeFormatter.ofPattern("dd/MM/yyyy")  ) );
 			alumno.setSexo( campos[9] );
-			
+			}
+			catch ( Exception e){
+				throw new UniversidadServerException(490, "Error en parseo de fecha {}.", campos[8].toString);
+			}
 			// Guardamos la entidad en bases de datos.
 			this.alumnoRepo.saveAndFlush(alumno);
 		}
