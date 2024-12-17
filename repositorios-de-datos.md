@@ -16,6 +16,7 @@ Para crear un repositorio de un modelo debemos crear una clase de tipo interfaz 
 **Ejemplo**
 En este caso el modelo se llama Usuario y su ID es de tipo long.
 ```java
+@Repository
 public interface NombreClaseRepository extends JpaRepository<NombreClase, Long>
 ```
 
@@ -35,6 +36,7 @@ En este ejemplo, PersonaRepository se conecta con la base de datos a través de 
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
 
+@Repository
 public interface PersonaRepository extends JpaRepository<Persona, Long> {
     // Puedes añadir métodos personalizados si lo necesitas
 }
