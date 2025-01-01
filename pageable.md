@@ -9,7 +9,7 @@ Es posible recuperar lotes de datos paginados, limitando su numero de elementos 
 ## 🔸 1. Crear el metodo que devuelve un listado de elementos paginados.
 El primer paso es definir un método en tu repositorio que devuelva un listado paginado, idealmente usando un DTO para representar los datos.   
     
-**Ejemplo de método en el repositorio:**        
+### 🧮 Ejemplo de método en el repositorio.
 ```java
 @Query("SELECT new es.iesjandula.aadrepaso.dto.EmpleadoDepartamentoDTO(em.nombre, d.nombreDepartamento) " +
        "FROM Empleados em JOIN em.idDepartamento d")
@@ -20,7 +20,7 @@ public Page<EmpleadoDepartamentoDTO> buscaEmpleadosYNombreDepartamentoPaginados(
 ## 🔸 2. Crear un Controlador o Servicio que Consuma el Método.
 El controlador o servicio se encargará de consumir el método del repositorio y manejar los datos paginados utilizando el objeto Pageable.    
     
-**Ejemplo controlador:**  
+### 🧮 Ejemplo controlador.
 Define un endpoint que reciba los parámetros de paginación y retorne los datos paginados.
 ```java
 	@GetMapping( value = "/empleadoydepartamento" )
@@ -35,10 +35,11 @@ Define un endpoint que reciba los parámetros de paginación y retorne los datos
 >`@PageableDefault`: Establece valores predeterminados para el tamaño de página (`size`) y el número de página (`page`).
 
 
-## 🔸 3. Llamada al servicio o endpoint: Utiliza parámetros como page y size para personalizar la solicitud.
+## 🔸 3. Llamada al servicio o endpoint. 
 Para consumir el método escrito en nuestro repositorio podemos hacerlo en distintos modos, acontinuación vemos dos ejemplos, desde **Postman** y desde un **Servicio Spring**.     
+Utiliza parámetros como page y size para personalizar la solicitud.
     
-**Ejemplo de llamada desde Postman:**    
+### 🧮 Ejemplo de llamada desde Postman.    
 Es importante recordar que los parametros de un paginable **se esperan por query y no por cuerpo Json.**
     
 <p align="center">
@@ -47,7 +48,7 @@ Es importante recordar que los parametros de un paginable **se esperan por query
 
 
 
- **Ejemplo servicio:**  
+ ### 🧮 Ejemplo servicio.
  Crea un servicio para procesar la lógica de paginación y manejar el resultado.   
  ```java
 int tamanoPagina = 5;
