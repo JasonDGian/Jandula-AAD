@@ -1,11 +1,11 @@
 # 📌 Recuperación de datos paginados.
 Es posible recuperar lotes de datos paginados, limitando su numero de elementos por pagina e indicando que página especificamente deseamos recuperar entre otras cosas.
-Para ello deberemos realizar los siguientnes pasos.
-0. Disponer de un elemento que deseamos listar.
-1. Crear metodo que devuelve elementos paginados.
-2. Crear controller o servicio que consume el metodo.
-3. Llamar al metodo o servicio.
-
+**Para ello deberemos realizar los siguientnes pasos.**
+0. Definir el modelo o DTO: Crea un objeto que represente los datos que deseas listar.
+1. Método en el repositorio: Implementa un método con soporte para Pageable.
+2. Controlador o servicio: Consume el método, recibe parámetros de paginación, y procesa el resultado.
+3. Llamada al servicio o endpoint: Utiliza parámetros como page y size para personalizar la solicitud.
+  
 ## 🔸 1. Crear el metodo que devuelve un listado de elementos paginados.
 El primer paso es definir un método en tu repositorio que devuelva un listado paginado, idealmente usando un DTO para representar los datos.   
     
@@ -52,3 +52,8 @@ if (pagina.hasContent()) {
     System.out.println("No se encontraron resultados para la página solicitada.");
 }
 ```
+[!NOTE] Condicional para Procesar Datos Paginados
+> La estructura `if-else` verifica si una página contiene datos:
+> - **`pagina.hasContent()`**: Comprueba si la página tiene elementos.
+> - **`pagina.forEach(...)`**: Itera sobre los elementos si existen y los procesa.
+> - **`else`**: Muestra un mensaje indicando que la página está vacía.
