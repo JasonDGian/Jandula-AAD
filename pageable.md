@@ -52,7 +52,9 @@ if (pagina.hasContent()) {
     System.out.println("No se encontraron resultados para la página solicitada.");
 }
 ```
->[!NOTE] Condicional para procesar datos paginados
+
+>[!NOTE]
+>Condicional para procesar datos paginados
 > La estructura `if-else` verifica si una página contiene datos:
 > - **`pagina.hasContent()`**: Comprueba si la página tiene elementos.
 > - **`pagina.forEach(...)`**: Itera sobre los elementos si existen y los procesa.
