@@ -3,7 +3,7 @@ Es posible recuperar lotes de datos paginados, limitando su numero de elementos 
 **Para ello deberemos realizar los siguientnes pasos.**
 0. Definir el modelo o DTO: Crea un objeto que represente los datos que deseas listar.
 1. Método en el repositorio: Implementa un método con soporte para Pageable.
-2. Controlador o servicio: Consume el método, recibe parámetros de paginación, y procesa el resultado.
+2. Controlador: Consume el método, recibe parámetros de paginación, y procesa el resultado.
 3. Llamada al servicio o endpoint: Utiliza parámetros como page y size para personalizar la solicitud.
   
 ## 🔸 1. Crear el metodo que devuelve un listado de elementos paginados.
@@ -33,7 +33,20 @@ Define un endpoint que reciba los parámetros de paginación y retorne los datos
 
 >[!Tip]
 >`@PageableDefault`: Establece valores predeterminados para el tamaño de página (`size`) y el número de página (`page`).
+
+
+## 🔸 3. Llamada al servicio o endpoint: Utiliza parámetros como page y size para personalizar la solicitud.
+Para consumir el método escrito en nuestro repositorio podemos hacerlo en distintos modos, acontinuación vemos dos ejemplos, desde **Postman** y desde un **Servicio Spring**.     
     
+**Ejemplo de llamada desde Postman:**    
+Es importante recordar que los parametros de un paginable **se esperan por query y no por cuerpo Json.**
+    
+<p align="center">
+	<img align="center" src="https://github.com/user-attachments/assets/b3ec2bc9-ec9c-4d97-92f6-a7dd14b1b16a">
+</p>
+
+
+
  **Ejemplo servicio:**  
  Crea un servicio para procesar la lógica de paginación y manejar el resultado.   
  ```java
