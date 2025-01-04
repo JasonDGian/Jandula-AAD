@@ -64,32 +64,49 @@ SELECT LENGTH(e.firstName) FROM Employee e
 ```
 
 ## 📍 Funciones de Fechas
-#### 🔸 CURRENT_DATE: Obtiene la fecha actual.
+#### 🔸 CURRENT_DATE
+Obtiene la fecha actual.
 ```jpql
 SELECT CURRENT_DATE FROM Employee e
 ```
-#### 🔸 CURRENT_TIME: Obtiene la hora actual.
+#### 🔸 CURRENT_TIME
+Obtiene la hora actual.
 ```jpql
 SELECT CURRENT_TIME FROM Employee e
 ```
-#### 🔸 CURRENT_TIMESTAMP: Obtiene la fecha y hora actual.
+#### 🔸 CURRENT_TIMESTAMP
+Obtiene la fecha y hora actual.
 ```jpql
 SELECT CURRENT_TIMESTAMP FROM Employee e
 ```
 
 ## 📍 Funciones Matemáticas
-15. ABS: Devuelve el valor absoluto.
-Ejemplo: SELECT ABS(e.salary) FROM Employee e
+#### 🔸 ABS
+Devuelve el valor absoluto.
+```jpql
+SELECT ABS(e.salary) FROM Employee e
+```
 
-    SQRT: Calcula la raíz cuadrada.
-    Ejemplo: SELECT SQRT(e.salary) FROM Employee e
+#### 🔸 SQRT
+Calcula la raíz cuadrada.
+```jpql
+SELECT SQRT(e.salary) FROM Employee e
+```
 
-    MOD: Calcula el resto de una división.
-    Ejemplo: SELECT MOD(e.salary, 1000) FROM Employee e
+#### 🔸 MOD
+Calcula el resto de una división.
+```jpql
+SELECT MOD(e.salary, 1000) FROM Employee e
+```
 
-Otras Funciones
-18. COALESCE: Devuelve el primer valor no nulo de una lista de expresiones.
-Ejemplo: SELECT COALESCE(e.manager, 'No Manager') FROM Employee e
+## 📍 Otras Funciones
+#### 🔸 COALESCE
+Devuelve el primer valor no nulo de una lista de expresiones.
+```jpql
+SELECT COALESCE(e.manager, 'No Manager') FROM Employee e
+```
 
-    NULLIF: Compara dos valores y devuelve NULL si son iguales; de lo contrario, devuelve el primer valor.
-    Ejemplo: SELECT NULLIF(e.salary, 0) FROM Employee e
+#### 🔸 NULLIF: Compara dos valores y devuelve NULL si son iguales; de lo contrario, devuelve el primer valor.
+```jpql
+SELECT NULLIF(e.salary, 0) FROM Employee e
+```
