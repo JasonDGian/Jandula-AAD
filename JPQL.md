@@ -1,3 +1,5 @@
+
+
 # 📌 Funciones JPQL.
 En el lenguaje de Spring Data JPA podemos utilizar funciones en las consultas personalizadas, a continuación un listado de funciones utiles.
 
@@ -111,3 +113,86 @@ Compara dos valores y devuelve NULL si son iguales; de lo contrario, devuelve el
 ```jpql
 SELECT NULLIF(e.salary, 0) FROM Employee e
 ```
+
+# 📌 Retornos de  las funciones JPQL.
+<table border="1">
+    <thead>
+        <tr>
+            <th>Función JPQL</th>
+            <th>Tipo de Dato Retornado en Java</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>COUNT</td>
+            <td>Long</td>
+            <td>Devuelve el número de registros.</td>
+        </tr>
+        <tr>
+            <td>SUM</td>
+            <td>Double, Long, BigDecimal</td>
+            <td>Devuelve la suma de los valores (según el tipo de columna).</td>
+        </tr>
+        <tr>
+            <td>AVG</td>
+            <td>Double</td>
+            <td>Devuelve el promedio de los valores.</td>
+        </tr>
+        <tr>
+            <td>MAX</td>
+            <td>Mismo tipo que la columna consultada</td>
+            <td>Retorna el valor máximo en el conjunto de datos.</td>
+        </tr>
+        <tr>
+            <td>MIN</td>
+            <td>Mismo tipo que la columna consultada</td>
+            <td>Retorna el valor mínimo en el conjunto de datos.</td>
+        </tr>
+        <tr>
+            <td>LENGTH</td>
+            <td>Integer</td>
+            <td>Devuelve la longitud de la cadena.</td>
+        </tr>
+        <tr>
+            <td>CURRENT_DATE</td>
+            <td>java.sql.Date</td>
+            <td>Devuelve la fecha actual (solo día, mes y año).</td>
+        </tr>
+        <tr>
+            <td>CURRENT_TIME</td>
+            <td>java.sql.Time</td>
+            <td>Devuelve la hora actual (solo horas, minutos, segundos).</td>
+        </tr>
+        <tr>
+            <td>CURRENT_TIMESTAMP</td>
+            <td>java.sql.Timestamp</td>
+            <td>Devuelve la fecha y hora actual.</td>
+        </tr>
+        <tr>
+            <td>ABS</td>
+            <td>Mismo tipo que la columna consultada</td>
+            <td>Devuelve el valor absoluto.</td>
+        </tr>
+        <tr>
+            <td>SQRT</td>
+            <td>Double</td>
+            <td>Devuelve la raíz cuadrada del valor.</td>
+        </tr>
+        <tr>
+            <td>MOD</td>
+            <td>Mismo tipo que la columna consultada</td>
+            <td>Devuelve el resto de una división.</td>
+        </tr>
+        <tr>
+            <td>COALESCE</td>
+            <td>Mismo tipo que las columnas evaluadas</td>
+            <td>Devuelve el primer valor no nulo en la lista.</td>
+        </tr>
+        <tr>
+            <td>NULLIF</td>
+            <td>Mismo tipo que las columnas evaluadas</td>
+            <td>Devuelve NULL si los valores son iguales; de lo contrario, el primer valor.</td>
+        </tr>
+    </tbody>
+</table>
