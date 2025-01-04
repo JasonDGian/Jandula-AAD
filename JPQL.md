@@ -106,7 +106,8 @@ Devuelve el primer valor no nulo de una lista de expresiones.
 SELECT COALESCE(e.manager, 'No Manager') FROM Employee e
 ```
 
-#### 🔸 NULLIF: Compara dos valores y devuelve NULL si son iguales; de lo contrario, devuelve el primer valor.
+#### 🔸 NULLIF
+Compara dos valores y devuelve NULL si son iguales; de lo contrario, devuelve el primer valor.
 ```jpql
 SELECT NULLIF(e.salary, 0) FROM Employee e
 ```
