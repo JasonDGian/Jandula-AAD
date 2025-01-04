@@ -33,35 +33,51 @@ SELECT MIN(e.salary) FROM Employee e
 
 
 ## 📍 Funciones de Manipulación de Strings
-6. CONCAT: Combina dos o más cadenas.
+#### 🔸 CONCAT
+Combina dos o más cadenas.
 Ejemplo: SELECT CONCAT(e.firstName, ' ', e.lastName) FROM Employee e
 
-    SUBSTRING: Extrae una parte de una cadena.
-    Ejemplo: SELECT SUBSTRING(e.firstName, 1, 3) FROM Employee e
+#### 🔸 SUBSTRING
+Extrae una parte de una cadena.
+```jpql
+SELECT SUBSTRING(e.firstName, 1, 3) FROM Employee e
+```
+#### 🔸 TRIM
+Elimina espacios al inicio o al final de una cadena.
+```jpql
+SELECT TRIM(e.firstName) FROM Employee e
+```
+#### 🔸 UPPER
+Convierte una cadena a mayúsculas.
+```jpql
+SELECT UPPER(e.firstName) FROM Employee e
+```
+#### 🔸 LOWER
+Convierte una cadena a minúsculas.
+```jpql
+SELECT LOWER(e.firstName) FROM Employee e
+```
+#### 🔸 LENGTH
+Devuelve la longitud de una cadena.
+```jpql
+SELECT LENGTH(e.firstName) FROM Employee e
+```
 
-    TRIM: Elimina espacios al inicio o al final de una cadena.
-    Ejemplo: SELECT TRIM(e.firstName) FROM Employee e
+## 📍 Funciones de Fechas
+#### 🔸 CURRENT_DATE: Obtiene la fecha actual.
+```jpql
+SELECT CURRENT_DATE FROM Employee e
+```
+#### 🔸 CURRENT_TIME: Obtiene la hora actual.
+```jpql
+SELECT CURRENT_TIME FROM Employee e
+```
+#### 🔸 CURRENT_TIMESTAMP: Obtiene la fecha y hora actual.
+```jpql
+SELECT CURRENT_TIMESTAMP FROM Employee e
+```
 
-    UPPER: Convierte una cadena a mayúsculas.
-    Ejemplo: SELECT UPPER(e.firstName) FROM Employee e
-
-    LOWER: Convierte una cadena a minúsculas.
-    Ejemplo: SELECT LOWER(e.firstName) FROM Employee e
-
-    LENGTH: Devuelve la longitud de una cadena.
-    Ejemplo: SELECT LENGTH(e.firstName) FROM Employee e
-
-Funciones de Fechas
-12. CURRENT_DATE: Obtiene la fecha actual.
-Ejemplo: SELECT CURRENT_DATE FROM Employee e
-
-    CURRENT_TIME: Obtiene la hora actual.
-    Ejemplo: SELECT CURRENT_TIME FROM Employee e
-
-    CURRENT_TIMESTAMP: Obtiene la fecha y hora actual.
-    Ejemplo: SELECT CURRENT_TIMESTAMP FROM Employee e
-
-Funciones Matemáticas
+## 📍 Funciones Matemáticas
 15. ABS: Devuelve el valor absoluto.
 Ejemplo: SELECT ABS(e.salary) FROM Employee e
 
