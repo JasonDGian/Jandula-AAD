@@ -59,7 +59,7 @@ logging: #Sección de configuración del sistema de logs en Spring.
 
 >[!Caution]
 >En una aplicación Spring Boot, solo puede haber un único archivo `application.yaml`, `application.yml` o `application.properties` en el mismo nivel. Esto significa que si existe un
-`application.yml` no podrán existir con el mismo nombre otros ficheros aunque tengan extensión distinta.
+`application.yml` no podrán existir con el mismo nombre otros ficheros aunque tengan extensión distinta. *Si pueden existir varios ficheros de configuracion con nombre distinto, conocidos como perfiles de ejecucion*.
      
 # 📍 Creación de modelos o entidades.
 Los modelos son clases JAVA que son mapeadas a objetos de bases de datos. Para esta operación es necesario utilizar ciertas anotaciones especiales de Spring Data JPA.
