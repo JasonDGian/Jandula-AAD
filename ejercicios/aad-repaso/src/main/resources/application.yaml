@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update  # Change to 'update' or 'validate' for production
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/repasoAAD?createDatabaseIfNotExist=true
+    username: root
+    password: 1234
+    hikari:
+      connection-timeout: 60000  # Timeout in ms
+      maximum-pool-size: 5  # Maximum number of connections in the pool
